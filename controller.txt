@@ -1,0 +1,28 @@
+#team of the week
+#compare each category to each team category
+
+#daily leaders
+update on the night before
+#most per category, find large in points
+#add name number of points and the team he is on
+
+#injury reserve around the league
+#if player is labelled as dtd or o then populate team name there
+
+#players of the week
+#the last seven day stats and their highest player values
+
+#Shittiest player of the weeks
+#waiver wire sleepers
+
+#best pickups
+monday to sunday who was added
+# the player that played the best that week using coefficient logic
+
+#not streak
+#players added that suck
+
+#draft steals
+#add draft rank and then have separate list of current rank using season stats for player values
+#players with the latest draft spot - what they are currently ranked
+#ranking updates every single day

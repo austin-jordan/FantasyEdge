@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  player_name: MyString
+  player_team: MyString
+  position: MyString
+  injury_status: MyString
+  minutes: 9.99
+  free_throws_made: 9.99
+  free_throws_attempted: 9.99
+  free_throw_percentage: 9.99
+  rebounds: 9.99
+  assists: 9.99
+  steals: 9.99
+  blocks: 9.99
+  points: 9.99
+  free_throw_value: 9.99
+  three_pointer_value: 9.99
+  rebounds_value: 9.99
+  assists_value: 9.99
+  steals_value: 9.99
+  blocks_value: 9.99
+  points_value: 9.99
+  player_value: 9.99
+
+two:
+  player_name: MyString
+  player_team: MyString
+  position: MyString
+  injury_status: MyString
+  minutes: 9.99
+  free_throws_made: 9.99
+  free_throws_attempted: 9.99
+  free_throw_percentage: 9.99
+  rebounds: 9.99
+  assists: 9.99
+  steals: 9.99
+  blocks: 9.99
+  points: 9.99
+  free_throw_value: 9.99
+  three_pointer_value: 9.99
+  rebounds_value: 9.99
+  assists_value: 9.99
+  steals_value: 9.99
+  blocks_value: 9.99
+  points_value: 9.99
+  player_value: 9.99

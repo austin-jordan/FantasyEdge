@@ -1,0 +1,148 @@
+<div class="banner">
+  <h2>Playbooks</h2>
+  <p>Fantasy Made Simple</p>
+</div>
+
+<div class="container">
+<div class="daily-leaders">
+  <div class="leaders-title">
+    <span class="title">Daily Leaders</span>
+  </div>
+  <div class ="leaders-body">
+    <table class="daily">
+      <thead>
+      <td class="stats">Points</td>
+      <td class="stats">Assists</td>
+      <td class="stats">Rebounds</td>
+      <td class="stats">Steals</td>
+      <td class="stats">Blocks</td>
+      <td class="stats">3 Pointers</td>
+      </thead>
+      <tr>
+        <td class="stats"><%= @daily_players.find_points_leader_name.first %></td>
+        <td class="stats"><%= @daily_players.find_assists_leader_name.first %></td>
+        <td class="stats"><%= @daily_players.find_rebounds_leader_name.first %></td>
+        <td class="stats"><%= @daily_players.find_steals_leader_name.first %></td>
+        <td class="stats"><%= @daily_players.find_blocks_leader_name.first %></td>
+        <td class="stats"><%= @daily_players.find_three_pointer_leader_name.first %></td>
+      </tr>
+      <tr>
+        <td class="stats"><%= @daily_players.find_points_leader %></td>
+        <td class="stats"><%= @daily_players.find_assists_leader %></td>
+        <td class="stats"><%= @daily_players.find_rebounds_leader %></td>
+        <td class="stats"><%= @daily_players.find_steals_leader %></td>
+        <td class="stats"><%= @daily_players.find_blocks_leader %></td>
+        <td class="stats"><%= @daily_players.find_three_pointer_leader %></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div class="injuries">
+  <div class="injured-players">
+    <div class="injured-players-title">
+      <span class="title">Injured Players</span>
+    </div>
+    <div class="injured-players-body">
+      <table class="injury-table">
+        <div class="injury-info">
+          <% @daily_players.find_injured_players.each do |injured_player| %>
+              <% if injured_player[2] != '' %>
+                <td class="stats"><span class="player"><%= injured_player[0] %></span> <span class="injury"><%= injured_player[1] %></span></td>
+              <% end %>
+           <% end %>
+        </div>
+      </table>
+    </div>
+  </div>
+  <div class="injured-teams">
+    <div class="section-title">
+      <span class="title">Teams with the Injury Bug</span>
+    </div>
+    <div class="section-body">
+      <table class="team-injury">
+        <% @daily_players.find_injured_teams.each do |injured_team| %>
+            <% if injured_team[0] != '' && injured_team[1] > 1 %>
+                <tr>
+                  <td class="stats"><%= injured_team[0] %></td>
+                  <td class="stats"><%= injured_team[1]%></td>
+                </tr>
+            <% end %>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="team-rankings">
+  <div class="section-title">
+    <span class="title">Team Power Rankings</span>
+  </div>
+  <div class="section-body">
+    <table class="rankings-team">
+      <thead>
+      <td>Rank</td>
+      <td>Team</td>
+      <td>Value</td>
+      </thead>
+      <% @season_players.find_team_player_values.first(6).each_with_index do |team_player_value, index| %>
+        <% if team_player_value[0] != '' %>
+          <tr>
+            <td class="stats"><%= index %></td>
+            <td class="stats"><%= team_player_value[0] %></td>
+            <td class="stats"><%= team_player_value[1] %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+  <div class="league-mvps">
+    <div class="section-title">
+      <span class="title">League MVPs</span>
+    </div>
+    <div class="section-body">
+      <table class="mvps">
+        <thead>
+        <td>Rank</td>
+        <td>Player</td>
+        <td>Value</td>
+        <td>League Team</td>
+        </thead>
+        <% @season_players.find_player_value.first(5).each do |player_value| %>
+            <tr>
+              <td class="stats"><%= player_value[0] %></td>
+              <td class="stats"><%= player_value[1] %></td>
+              <td class="stats"><%= player_value[3] %></td>
+              <td class="stats"><%= player_value[2] %></td>
+            </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+
+<div class="least-valuable">
+  <div class="section-title">
+    <span class="title">Least Valuable Players</span>
+  </div>
+  <div class="section-body">
+    <table class="lvps">
+      <thead>
+      <td>Rank</td>
+      <td>Player</td>
+      <td>Value</td>
+      <td>League Team</td>
+      </thead>
+      <% @season_players.find_lowest_player_value.each_with_index do |lowest_player_value, index| %>
+      <tr>
+        <td class="stats"><%= index + 1 %></td>
+        <td class="stats"><%= lowest_player_value[1] %></td>
+        <td class="stats"><%= lowest_player_value[3] %></td>
+        <td class="stats"><%= lowest_player_value[2] %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+</div>

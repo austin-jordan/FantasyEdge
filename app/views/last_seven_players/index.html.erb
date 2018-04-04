@@ -1,0 +1,23 @@
+<h1>Averages for Players For the Last Seven Days</h1>
+
+<table>
+<% @last_seven_players.each do |last_seven_player| %>
+      <tr>
+        <td><%= last_seven_player.player_name %></td>
+        <td><%= last_seven_player.player_team %></td>
+        <td><%= last_seven_player.position %></td>
+        <td><%= last_seven_player.injury_status %></td>
+        <td><%= last_seven_player.league_team %></td>
+        <td><%= last_seven_player.minutes %></td>
+        <td><%= last_seven_player.free_throws_made %></td>
+        <td><%= last_seven_player.free_throws_attempted %></td>
+        <td><%= last_seven_player.free_throw_percentage %></td>
+        <td><%= last_seven_player.three_pointer %></td>
+        <td><%= last_seven_player.rebounds %></td>
+        <td><%= last_seven_player.assists %></td>
+        <td><%= last_seven_player.steals %></td>
+        <td><%= last_seven_player.blocks %></td>
+        <td><%= last_seven_player.points %></td>
+      </tr>
+</table>
+<% end %>

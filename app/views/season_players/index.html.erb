@@ -1,0 +1,47 @@
+<div class="league-mvps">
+  <div class="section-title">
+    <span class="title">League MVPs</span>
+  </div>
+  <div class="section-body">
+    <table class="mvps">
+          <thead>
+          <td>Rank</td>
+          <td>Player</td>
+          <td>Value</td>
+          <td>League Team</td>
+          </thead>
+          <% @season_players.find_player_value.first(5).each do |player_value| %>
+          <tr>
+            <td class="stats"><%= player_value[0] %></td>
+            <td class="stats"><%= player_value[1] %></td>
+            <td class="stats"><%= player_value[3] %></td>
+            <td class="stats"><%= player_value[2] %></td>
+          </tr>
+          <% end %>
+    </table>
+  </div>
+</div>
+
+<div class="least-valuable">
+  <div class="section-title">
+    <span class="title">Least Valuable Players</span>
+  </div>
+  <div class="section-body">
+    <table class="lvps">
+      <thead>
+      <td>Rank</td>
+      <td>Player</td>
+      <td>Value</td>
+      <td>League Team</td>
+      </thead>
+      <% @season_players.find_player_value.last(5).each do |player_value| %>
+      <tr>
+        <td class="stats"><%= player_value[0] %></td>
+        <td class="stats"><%= player_value[1] %></td>
+        <td class="stats"><%= player_value[3] %></td>
+        <td class="stats"><%= player_value[2] %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
